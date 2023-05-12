@@ -20,7 +20,12 @@ async function transformPagesWxml(cwd) {
   const appJsonPath = path.join(cwd, 'app.json')
   if (!fs.existsSync(appJsonPath)) return;
   const appJson = JSON.parse(await fs.promises.readFile(appJsonPath, "utf8"));
-  const pages = appJson.pages;
+  const subpackages = appJson.subpackages;
+  const subPages =  subpackages.reduce((arr, item)=>{
+    const res = item.pages.map(i=> item.root + i)
+    return arr.concat(res)
+  },[])
+  const pages = [...appJson.pages, ...subPages];
   for (const page of pages) {
     const entry = path.join(cwd, (page[0] === "/" ? "." + page : page) + ".wxml");
     const source = await fs.promises.readFile(entry, "utf8");
