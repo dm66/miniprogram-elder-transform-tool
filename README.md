@@ -8,7 +8,7 @@
 
 ```bash
 # 转换当前目录下小程序源码，需要保证 app.json 在目录下
-npx miniprogram-elder-transform .
+npx miniprogram-elder-transform-tool .
 ```
 
 ## 原理
@@ -18,3 +18,5 @@ npx miniprogram-elder-transform .
 之后，转换工具会将`wxss`中的字体大小，行高，图片宽高等样式，转换为根据`rem`缩放的形式：
 
 如转换前`wxss`样式为 `font-size: 14px;`，则转换后为 `font-size: calc(14px + 0.5 * (1rem - 16px));`。
+
+> 支持分包页面的适配
