@@ -26,8 +26,8 @@ export default async function transformPageMeta(source, filename) {
       attrs: [],
       children: [],
     };
-    rootPath.insertBefore(pageMeta);
-    rootPath.insertBefore({ type: "text", text: "\n" }); // 插入换行
+    rootPath?.insertBefore(pageMeta);
+    rootPath?.insertBefore({ type: "text", text: "\n" }); // 插入换行
   }
 
   let hasRootFontSize = false;

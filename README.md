@@ -1,7 +1,9 @@
-# miniprogram-elder-transform
+# miniprogram-elder-transform-tool
+
 > 小程序适老化自动适配工具
 
 ## 注意
+
 本适老化适配工具不能覆盖所有场景，经过本工具转换后仍需要进行测试和手动适配，以符合产品预期
 
 ## 使用
